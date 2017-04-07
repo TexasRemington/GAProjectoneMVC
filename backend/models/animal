@@ -1,0 +1,13 @@
+var mongoose = require('mongoose');
+
+var animalSchema = new mongoose.Schema({
+  description: String,
+  shelterId: String,
+  name: String,
+  image: String,
+  animalId: String
+});
+
+var Animal = mongoose.model('Animal', animalSchema);
+
+module.exports = Animal;

@@ -6,12 +6,12 @@ $(document).ready(function() {
     }
   });
 
-  var domain = 'https://nameless-falls-11287.herokuapp.com/';
-  var socket = io(domain);
-
-  socket.on('connect', function(){
-    console.log('Connected');
-  });
+  var domain = 'http://localhost:5000';
+  // var socket = io(domain);
+  //
+  // socket.on('connect', function(){
+  //   console.log('Connected');
+  // });
 
   // What we want to do once we've logged in
   lock.on("authenticated", function(authResult) {
@@ -51,33 +51,34 @@ $(document).ready(function() {
      $('.splash-heading').hide();
      $('.btn-logout').show();
 
-     getGrowlHtml();
-     getGrowlForm();
+    //  getGrowlHtml();
+    //  getGrowlForm();
   };
 
 
-  function getGrowlForm(){
-    $.ajax({
-      url: '/components/form.json',
-      method: 'GET'
-    }).done(function(response){
-      $('body').prepend(response.html);
-    }).fail(function(error){
-      console.error(error);
-    });
-  };
+  // function getGrowlForm(){
+  //   $.ajax({
+  //     url: '/components/form.json',
+  //     method: 'GET'
+  //   }).done(function(response){
+  //     $('body').prepend(response.html);
+  //   }).fail(function(error){
+  //     console.error(error);
+  //   });
+  // };
+  //
+  // function getGrowlHtml(){
+  //   $.ajax({
+  //     url: '/components/growls.json',
+  //     method: 'GET'
+  //   }).done(function(response){
+  //     $('body').prepend(response.html);
+  //     // refreshGrowls();
+  //   }).fail(function(error){
+  //     console.error(error);
+  //   });
+  // };
 
-  function getGrowlHtml(){
-    $.ajax({
-      url: '/components/growls.json',
-      method: 'GET'
-    }).done(function(response){
-      $('body').prepend(response.html);
-      // refreshGrowls();
-    }).fail(function(error){
-      console.error(error);
-    });
-  };
 
 
   var logout = function() {
@@ -95,25 +96,26 @@ $(document).ready(function() {
     $('.btn-logout').click(function(e) {
       e.preventDefault();
       logout();
-    })
 
-    $('body').on('submit','.add-growl',function(e){
-      e.preventDefault();
-      var text = $(this).find('.growl').val();
-      $(this).find('.growl').val('');
-
-      addGrowl(text, JSON.parse(localStorage.getItem('profile')) )
-      $('.class-growls li').last().remove();
     });
-  };
 
-  function addGrowl(growlText, profile){
-    var data = {
-      text: growlText,
-      name: profile.given_name + ' ' + profile.family_name,
-      picture: profile.picture,
-      provider: profile.identities[0].provider
-    };
+  //   $('body').on('submit','.add-growl',function(e){
+  //     e.preventDefault();
+  //     var text = $(this).find('.growl').val();
+  //     $(this).find('.growl').val('');
+  //
+  //     addGrowl(text, JSON.parse(localStorage.getItem('profile')) )
+  //     $('.class-growls li').last().remove();
+  //   });
+};
+  //
+  // function addGrowl(growlText, profile){
+  //   var data = {
+  //     text: growlText,
+  //     name: profile.given_name + ' ' + profile.family_name,
+  //     picture: profile.picture,
+  //     provider: profile.identities[0].provider
+  //   };
     //
     // $.ajax({
     //   url: domain + '/growl',
@@ -126,19 +128,20 @@ $(document).ready(function() {
     // }).fail(function(error){
     //   console.error('Error: ', error);
     // });
-    socket.emit('add growl', data);
-  };
 
-  function addGrowlLocal(growl){
-    $('.class-growls').prepend([
-      '<li>',
-        '<p>'+growl.name+'</p>',
-        '<p><img src="'+(growl.image || 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg')+'"/></p>',
-        '<p>'+growl.text+'</p>',
-        '<p>'+growl.provider+'</p>',
-      '</li>'
-    ].join(''));
-  };
+  //   socket.emit('add growl', data);
+  // };
+  //
+  // function addGrowlLocal(growl){
+  //   $('.class-growls').prepend([
+  //     '<li>',
+  //       '<p>'+growl.name+'</p>',
+  //       '<p><img src="'+(growl.image || 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg')+'"/></p>',
+  //       '<p>'+growl.text+'</p>',
+  //       '<p>'+growl.provider+'</p>',
+  //     '</li>'
+  //   ].join(''));
+  // };
 
   // function refreshGrowls(){
   //   $.ajax({
@@ -154,13 +157,15 @@ $(document).ready(function() {
   //   });
   // };
 
-  socket.on('send growls', function(growls){
-    // put the growl into the DOM
-    $('.class-growls').empty();
-    growls.reverse().forEach(function(growl,index){
-      addGrowlLocal(growl);
-    });
-  });
+
+  // socket.on('send growls', function(growls){
+  //   // put the growl into the DOM
+  //   $('.class-growls').empty();
+  //   growls.reverse().forEach(function(growl,index){
+  //     addGrowlLocal(growl);
+  //   });
+  // });
+
 
   function main(){
     retrieve_profile();
