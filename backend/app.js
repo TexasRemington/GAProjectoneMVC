@@ -11,7 +11,8 @@ mongoose.connect(process.env.PROJONE_DB_CONN);
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var animals = require('./routes/animals');
+// var animals = require('./routes/animals');
+var shelters = require('./routes/shelters');
 
 var app = express();
 
@@ -29,7 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/animals', animals);
+// app.use('/animals', animals);
+app.use('/shelters', shelters);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
