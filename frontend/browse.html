@@ -146,6 +146,30 @@
     .slider.round:before {
       border-radius: 50%;
     }
+
+    .filterButton{
+      background-color: rgba(246, 166, 35, 1);
+      color: white;
+      min-width: 100%;
+      min-height: 100%;
+      border: 0;
+      border-radius: 0;
+      outline: none;
+      text-align: left;
+    }
+
+    .filterButton:focus{
+      background-color: rgba(246,166,35,1);
+      outline: none;
+    }
+
+    .filterButton:hover{
+      background-color: rgba(246,166,35,.5);
+    }
+
+    .sidenav{
+      margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -251,7 +275,7 @@
 <div class="col-sm-4 sidenav">
                 <!-- survey by: chris jauregui ... keep it funky yallllllllll -->
 
-  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Filter By:</button>
+  <button type="button" class="btn btn-info filterButton" data-toggle="collapse" data-target="#demo">Filter By:</button>
     <div id="demo" class="collapse">
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
