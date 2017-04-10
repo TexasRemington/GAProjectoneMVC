@@ -14,6 +14,86 @@ L A T O - F O N T
 
 */
 
+/* N A V I G A T  I O N */
+
+.navbar {
+margin-bottom: 40px;
+background-color: #6FB002;
+z-index: 9999;
+border: 0;
+font-size: 20px !important;
+line-height: 1.2 !important;
+letter-spacing: 0px;
+border-radius: 0;
+font-family: Lato, sans-serif;
+font-weight: bold;
+}
+.navbar li a, .navbar .navbar-brand {
+color: #fff !important;
+font-weight: lighter;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+color: rgba(151, 151, 151, 1) !important;
+background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+border-color: transparent;
+color: #fff !important;
+}
+.navbar-brand {
+font-size: 40px !important;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+}
+
+/* Set black background color, white text and some padding */
+
+footer {
+  background-color: rgba(0, 0, 0, 0.75);
+  font-size: 15px !important;
+  color: #ffffff;
+  padding: 15px;
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+}
+footer a {
+    color: #f5f5f5;
+}
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+footer p {
+display: inline-block;
+margin: .25rem 0 0 0;
+float: left;
+}
+footer span {
+ float: right;
+ margin-right: 40px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;}
+}
+
+.panel-primary>.panel-heading{
+  background-color: #F6A623;
+}
+
 /* T E X T - S T Y L I N G */
 
 body{
@@ -242,6 +322,9 @@ div#idName{
 
 /* G O O G L E - M A P - S T Y L I N G */
 
-
+#googleMap{
+  height: 400px;
+  max-width: 25%;
+}
 
 /* A N I M A T I O N S */
