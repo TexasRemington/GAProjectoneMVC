@@ -9,17 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
-  <script type="text/javascript">
-  function toggleChevron(e) {
-  $(e.target)
-      .prev('.panel-heading')
-      .find("i.indicator")
-      .toggleClass('fa-caret-down fa-caret-right');
-}
-$('#accordion').on('hidden.bs.collapse', toggleChevron);
-$('#accordion').on('shown.bs.collapse', toggleChevron);
-
-  </script>
+  <script src="https://surveyjs.azureedge.net/0.12.7/survey.jquery.min.js"></script>
   <style>
 
 h1 {
@@ -150,22 +140,11 @@ h1 {
 
 <div class="container-fluid text-center">
   <div class="row">
-    <h1>Help Me Choose</h1>
-    <div class="well well-lg">
-
-    </div>
-    <div class="progress">
-    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">
-      1 of 10<span class="sr-only">10% Complete (success)</span>
-    </div>
-  </div>
-  <nav aria-label="...">
-<ul class="pager">
-  <li class="next"><a href="#">Next <span aria-hidden="true">&rarr;</span></a></li>
-</ul>
-</nav>
-
-
+    <div class="col-sm-10 text-center">
+      <h1>Help Me Choose</h1>
+      <hr>
+      <div id="surveyContainer"></div>
+      </div>
   </div>
 </div>
 
@@ -175,6 +154,6 @@ h1 {
         <a href="#">SHELTER LOGIN</a>
   </span>
 </footer>
-
+ <script src="main.js" charset="utf-8"></script>
 </body>
 </html>
