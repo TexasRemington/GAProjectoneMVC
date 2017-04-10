@@ -25,7 +25,7 @@ font-size: 20px !important;
 line-height: 1.2 !important;
 letter-spacing: 0px;
 border-radius: 0;
-font-family: Lato, sans-serif;
+font-family: 'Lato', sans-serif;
 font-weight: bold;
 }
 .navbar li a, .navbar .navbar-brand {
@@ -60,7 +60,7 @@ footer {
   font-size: 15px !important;
   color: #ffffff;
   padding: 15px;
-  font-family: Lato, sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: bold;
 }
 footer a {
@@ -136,7 +136,7 @@ p .REMEMBERME{
 
 h2.OR{
   font-size: 20px;
-  font-weight: light;
+  font-weight: lighter;
   color: rgb(0,0,0);
 }
 
