@@ -125,11 +125,11 @@
     }
 
     input:checked + .slider {
-      background-color: #2196F3;
+      background-color: rgb(246,166,35);
     }
 
     input:focus + .slider {
-      box-shadow: 0 0 1px #2196F3;
+      box-shadow: 0 0 1px rgb(246,166,35);
     }
 
     input:checked + .slider:before {
@@ -148,6 +148,7 @@
     }
 
     .filterButton{
+      padding-top: 10px;
       background-color: rgba(246, 166, 35, 1);
       color: white;
       min-width: 100%;
@@ -156,20 +157,44 @@
       border-radius: 0;
       outline: none;
       text-align: left;
+      font-size: 1em;
+      letter-spacing: .1em;
     }
 
-    .filterButton:focus{
-      background-color: rgba(246,166,35,1);
-      outline: none;
+    .filterButton:after, .filterButton:active, .filterButton:visited, .filterButton:focus{
+      background-color: rgba(246,166,35,1) !important;
+      outline: none !important;
     }
 
     .filterButton:hover{
-      background-color: rgba(246,166,35,.5);
+      background-color: rgba(246,166,35,.5) !important;
     }
 
     .sidenav{
       margin: 0;
+      background-color: rgb(255,255,255) !important;
     }
+
+    .filterIcon{
+      float: right;
+      max-width: 25px;
+      max-height: 25px;
+    }
+
+    hr{
+      border-top: 1px solid rgba(0,0,0,.8);
+    }
+    .panel-heading{
+      padding: 0 !important;
+      background-color: white !important;
+      border-radius: 0;
+      border:
+    }
+
+    .panel-default{
+      margin: 0 !important;
+    }
+
   </style>
 </head>
 <body>
@@ -275,7 +300,7 @@
 <div class="col-sm-4 sidenav">
                 <!-- survey by: chris jauregui ... keep it funky yallllllllll -->
 
-  <button type="button" class="btn btn-info filterButton" data-toggle="collapse" data-target="#demo">Filter By:</button>
+  <button type="button" class="btn btn-info filterButton" data-toggle="collapse" data-target="#demo">Filter By: <img src="images/filter.svg" class="filterIcon" /></button>
     <div id="demo" class="collapse">
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
@@ -290,6 +315,7 @@
       <form id="collapse1" class="panel-collapse collapse in">
 
     <br>
+    <hr>
       <br>
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">AGE<span class="caret"></span></a>
           <br>
@@ -306,7 +332,8 @@
         <input type="checkbox" value="">SENIOR
           </label>
             <br>
-              <br>
+              <hr />
+                <br>
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">SIZE<span class="caret"></span></a>
                   <br>
                 <label class="checkbox-inline">
@@ -322,6 +349,7 @@
               <input type="checkbox" value="">GIANT
             </label>
           <br>
+          <hr />
         <br>
       <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">GENDER<span class="caret"></span></a>
     <br>
@@ -331,8 +359,8 @@
             <label class="checkbox-inline">
               <input type="checkbox" value="">FEMALE
                 </label>
-
                 <br>
+                <hr />
                   <br>
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">HAIR LENGTH<span class="caret"></span></a>
               <br>
