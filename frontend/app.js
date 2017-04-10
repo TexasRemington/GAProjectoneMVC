@@ -129,7 +129,7 @@ function checkProfile(profile){
     };
     var includes = user_ids.includes(profile.identities[0].user_id);
     console.log('Is profile in DB: ',includes);
-      if(includes == true){
+      if(includes === true){
       }else{
         addProfile(profile);
       }
@@ -156,6 +156,7 @@ function addProfile(profile){
   }).fail(function(error){
     console.error('Error: ', error);
   });
+  // socket.emit('add profile', data);
 };
 function addProfileLocal(profile){
   $('.class-profile').prepend([
@@ -166,13 +167,14 @@ function addProfileLocal(profile){
     '</li>'
   ].join(''));
 };
-  //
-  // function addGrowl(growlText, profile){
+
+  // function addPet(animal){
   //   var data = {
-  //     text: growlText,
-  //     name: profile.given_name + ' ' + profile.family_name,
-  //     picture: profile.picture,
-  //     provider: profile.identities[0].provider
+  //     name: name,
+  //     description: description,
+  //     picture: picture,
+  //     breed: breed,
+  //     shelter: shelterId
   //   };
     //
     // $.ajax({
