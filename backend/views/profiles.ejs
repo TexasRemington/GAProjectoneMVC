@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Profiles</title>
+  </head>
+  <body>
+    <h1>Profiles</h1>
+
+    <ul>
+      <% for (var i=0, x=profiles.length; i<x; i++) { %>
+        <li><a href="/profiles/<%= profiles[i]._id %>"><%= profiles[i].name %></a></li>
+      <% } %>
+    </ul>
+  </body>
+</html>
