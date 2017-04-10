@@ -26,6 +26,7 @@ $(document).ready(function() {
 
       // Display user information
       show_profile_info(profile);
+      checkProfile(profile);
     });
   });
 
@@ -39,6 +40,7 @@ $(document).ready(function() {
         }
         // Display user information
         show_profile_info(profile);
+
       });
     }
   };
@@ -108,13 +110,71 @@ $(document).ready(function() {
   //     $('.class-growls li').last().remove();
   //   });
 };
-  //
-  // function addGrowl(growlText, profile){
+
+function checkProfile(profile){
+  // var data = {
+  //   user_id: user_id
+  // };
+
+  $.ajax({
+    url: domain + '/profiles',
+    method: 'GET'
+
+  }).done(function(response){
+    var user_ids = [];
+    var match = '';
+
+    for(i=0,x=response.length;i<x;i++){
+       user_ids.push(response[i].user_id);
+    };
+    var includes = user_ids.includes(profile.identities[0].user_id);
+    console.log('Is profile in DB: ',includes);
+      if(includes === true){
+      }else{
+        addProfile(profile);
+      }
+  }).fail(function(error){
+    console.error('Error: ', error);
+  });
+};
+
+function addProfile(profile){
+  var data = {
+    name: profile.given_name + ' ' + profile.family_name,
+    picture: profile.picture,
+    provider: profile.identities[0].provider,
+    user_id: profile.identities[0].user_id
+  };
+
+  $.ajax({
+    url: domain + '/profiles',
+    method: 'POST',
+    data: data
+  }).done(function(response){
+    console.log('Profile was added to the DB! ', response);
+    addProfileLocal(response);
+  }).fail(function(error){
+    console.error('Error: ', error);
+  });
+  // socket.emit('add profile', data);
+};
+function addProfileLocal(profile){
+  $('.class-profile').prepend([
+    '<li>',
+      '<p>'+ name +'</p>',
+      '<p><img src="'+( image || 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg')+'"/></p>',
+      '<p>'+provider+'</p>',
+    '</li>'
+  ].join(''));
+};
+
+  // function addPet(animal){
   //   var data = {
-  //     text: growlText,
-  //     name: profile.given_name + ' ' + profile.family_name,
-  //     picture: profile.picture,
-  //     provider: profile.identities[0].provider
+  //     name: name,
+  //     description: description,
+  //     picture: picture,
+  //     breed: breed,
+  //     shelter: shelterId
   //   };
     //
     // $.ajax({
