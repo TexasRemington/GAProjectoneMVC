@@ -1,0 +1,18 @@
+center on downtown austin
+
+var map = new google.maps.Map(document.getElementById("map"){
+  center: new google.maps.LatLng("30.267", "-97.743"),
+  zoom: 6,
+  mayTypeId: (""),
+});
+
+
+individual shelter locations
+
+var json = [{
+  "title":"Ausin Pets Alive",
+  "lat": "30.269",
+  "lng": "-97.759",
+  " desc": "Austin animal shelter..."
+},
+]
