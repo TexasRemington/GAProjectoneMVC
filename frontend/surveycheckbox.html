@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    <script src="https://surveyjs.azureedge.net/0.12.7/survey.jquery.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+<!-- <form class="" action="index.html" method="post">
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="1" />a</p>
+<p><input name="selector[]" id="ad_Checkbox2" class="ads_Checkbox" type="checkbox" name="answer[]" value="2" />b</p>
+<p><input name="selector[]" id="ad_Checkbox3" class="ads_Checkbox" type="checkbox" name="answer[]" value="3" />c</p>
+<p><input name="selector[]" id="ad_Checkbox4" class="ads_Checkbox" type="checkbox" name="answer[]" value="4" />d</p>
+<p><input type="button" id="save_value" type="submit" name="submit" value="submit" /></p>
+</form> -->
+<form class="" action="index.html" method="post">
+<p>Cat or Dog?</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Cat" />Cat</p>
+<p><input name="selector[]" id="ad_Checkbox2" class="ads_Checkbox" type="checkbox" name="answer[]" value="Dog" />Dog</p>
+<br>
+<p>What size pet?</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Small" />Small</p>
+<p><input name="selector[]" id="ad_Checkbox2" class="ads_Checkbox" type="checkbox" name="answer[]" value="Medium" />Medium</p>
+<p><input name="selector[]" id="ad_Checkbox3" class="ads_Checkbox" type="checkbox" name="answer[]" value="Large" />Large</p>
+<br>
+<p>What age range are you looking for?</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Less than a year" />Less than a year</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="1-3 years" />1-3 years</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="4-7 years" />4-7 years</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Senior" />Senior</p>
+<br>
+<p>Gender preference?</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Male" />Male</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Female" />Female</p>
+<br>
+<p>What is the hair length preference?</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Short hair" />Short hair</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Medium hair" />Medium hair</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Long hair" />Long hair</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Hairless" />Hairless</p>
+<br>
+<p>Who's in your family?</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Kids" />Kids</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Cats" />Cats</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Dogs" />Dogs</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="All" />All</p>
+<br>
+<p>How much energy should your new pet have?</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="High energy" />High energy</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Medium energy" />Medium energy</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Low evergy" />Low energy</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Lazy" />Lazy</p>
+<br>
+<p>What level of training do you prefer?</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="House Trained" />House Trained</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Needs Training" />Needs Training</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Trainable" />Trainable</p>
+<br>
+<p>What level of independence do you?</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Independent" />Independent</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Can be left alone for short periods" />Can be left alone for short periods.</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Needs supervision" />Needs supervision</p>
+<br>
+<p>Got allergies?</p>
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="Hypoallergenic" />Hypoallergenic</p>
+<p><input type="button" id="save_value" type="submit" name="submit" value="submit" /></p>
+
+</form>
+<script type="text/javascript">
+// $('#save_value').click(function(){
+//     var final = '';
+//     $('.ads_Checkbox:checked').each(function(){
+//         var values = $(this).val();
+//         final += values;
+//     });
+//     alert(final);
+// });
+$('#save_value').click(function(){
+$('.ads_Checkbox:checked').each(function(){
+     alert($(this).val());
+                       });});
+</script>
+  </body>
+</html>
