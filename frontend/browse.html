@@ -9,6 +9,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+
   <style>
 
     /* Remove the navbar's default margin-bottom and rounded borders */
@@ -51,7 +55,6 @@
 
     /* Set gray background color and 100% height */
     .sidenav {
-      padding-top: 20px;
       background-color: #f1f1f1;
     }
 
@@ -62,7 +65,7 @@
       font-size: 15px !important;
       color: #ffffff;
       padding: 15px;
-      font-family: Lato, sans-serif;
+      font-family: 'Lato', sans-serif;
       font-weight: bold;
     }
     footer a {
@@ -87,13 +90,14 @@
     @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;
-        padding: 15px;
+        padding: 0;
       }
       .row.content {height:auto;}
     }
     .switch {
       position: relative;
       display: inline-block;
+      float: left;
       width: 60px;
       height: 34px;
     }
@@ -125,11 +129,11 @@
     }
 
     input:checked + .slider {
-      background-color: #2196F3;
+      background-color: rgb(246,166,35);
     }
 
     input:focus + .slider {
-      box-shadow: 0 0 1px #2196F3;
+      box-shadow: 0 0 1px rgb(246,166,35);
     }
 
     input:checked + .slider:before {
@@ -148,6 +152,7 @@
     }
 
     .filterButton{
+      padding-top: 10px;
       background-color: rgba(246, 166, 35, 1);
       color: white;
       min-width: 100%;
@@ -156,20 +161,79 @@
       border-radius: 0;
       outline: none;
       text-align: left;
+      font-size: 1em;
+      letter-spacing: .1em;
     }
 
-    .filterButton:focus{
-      background-color: rgba(246,166,35,1);
-      outline: none;
+    .filterButton:after, .filterButton:active, .filterButton:visited, .filterButton:focus{
+      background-color: rgba(246,166,35,1) !important;
+      outline: none !important;
     }
 
     .filterButton:hover{
-      background-color: rgba(246,166,35,.5);
+      background-color: rgba(246,166,35,.5) !important;
     }
 
     .sidenav{
       margin: 0;
+      background-color: rgb(255,255,255) !important;
     }
+
+    .filterIcon{
+      float: right;
+      max-width: 25px;
+      max-height: 25px;
+    }
+
+    .panel-collapse, .panel-default, .panel-heading{
+      background-color: white !important;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    .panel-title a:hover, .panel-title a:focus{
+      text-decoration: none !important;
+    }
+
+    span.caret{
+      float: right;
+    }
+
+    .detailTitle{
+      font-family: 'Lato', sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    div.container-fluid.text-center{
+      text-align: left;
+    }
+
+    div.panel.panel-default{
+      margin-bottom: -2px;
+    }
+
+    div.panel-heading{
+      margin: 0;
+    }
+    div.panel{
+      min-width: 100%;
+    }
+
+    h4{
+      font-family: 'Lato', sans-serif;
+    }
+
+    .checkbox-inline{
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #4A4A4A;
+    }
+    .caret.caret-up {
+      border-top-width: 0;
+      border-bottom: 4px solid #000000;
+    }
+
   </style>
 </head>
 <body>
@@ -274,82 +338,84 @@
 </div>
 <div class="col-sm-4 sidenav">
                 <!-- survey by: chris jauregui ... keep it funky yallllllllll -->
+<div class="panel">
 
-  <button type="button" class="btn btn-info filterButton" data-toggle="collapse" data-target="#demo">Filter By:</button>
-    <div id="demo" class="collapse">
-      <div class="panel-group" id="accordion">
+  <button type="button" class="btn btn-info filterButton" data-toggle="collapse" data-target="#filterCollapse">Filter By: <img src="images/filter.svg" class="filterIcon" /></button>
+    <div id="filterCollapse" class="collapse">
+      <!-- <div class="panel-group" id="accordion"> -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <div class="btn-group">
-
               <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Physical Traits<span class="caret"></span></a>
           </h4>
-        </div>
+          </div>
 
-      <form id="collapse1" class="panel-collapse collapse in">
-
-    <br>
-      <br>
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">AGE<span class="caret"></span></a>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class=panel-body>
+          <form id="collapse1" class="panel-collapse collapse in">
+<span class="detailTitle">Age</span>
+<br />
           <br>
         <label class="checkbox-inline">
-          <input type="checkbox" value="">PUPPY
+          <input type="checkbox" id="customBox" value="">Puppy
             </label>
               <label class="checkbox-inline">
-                <input type="checkbox" value="">YOUNG
+                <input type="checkbox" id="customBox" value="">Young
                   </label>
                 <label class="checkbox-inline">
-              <input type="checkbox" value="">ADULT
+              <input type="checkbox" id="customBox" value="">Adult
             </label>
           <label class="checkbox-inline">
-        <input type="checkbox" value="">SENIOR
+        <input type="checkbox" id="customBox" value="">Senior
           </label>
-            <br>
-              <br>
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">SIZE<span class="caret"></span></a>
+        </form>
+              <hr />
+<span class="detailTitle">Size</span>
+<br />
                   <br>
                 <label class="checkbox-inline">
-              <input type="checkbox" value="">TOY
+              <input type="checkbox" id="customBox" value="">Toy
           </label>
       <label class="checkbox-inline">
-        <input type="checkbox" value="">SMALL
+        <input type="checkbox" id="customBox" value="">Small
         </label>
           <label class="checkbox-inline">
-            <input type="checkbox" value="">MEDIUM
+            <input type="checkbox" id="customBox" value="">Medium
               </label>
                 <label class="checkbox-inline">
-              <input type="checkbox" value="">GIANT
+              <input type="checkbox" id="customBox" value="">Giant
             </label>
-          <br>
-        <br>
-      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">GENDER<span class="caret"></span></a>
+        <hr />
+      <span class="detailTitle">Gender</span>
     <br>
+    <br />
       <label class="checkbox-inline">
-        <input type="checkbox" value="">MALE
+        <input type="checkbox" id="customBox" value="">Male
           </label>
             <label class="checkbox-inline">
-              <input type="checkbox" value="">FEMALE
+              <input type="checkbox" id="customBox" value="">Female
                 </label>
 
-                <br>
-                  <br>
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">HAIR LENGTH<span class="caret"></span></a>
+                  <hr />
+                  <span class="detailTitle">Hair Length</span>
+                  <br />
               <br>
             <label class="checkbox-inline">
-          <input type="checkbox" value="">SHORT
+          <input type="checkbox" id="customBox" value="">Short
         </label>
       <label class="checkbox-inline">
-    <input type="checkbox" value="">MEDIUM
+    <input type="checkbox" id="customBox" value="">Medium
       </label>
         <label class="checkbox-inline">
-          <input type="checkbox" value="">LONG
+          <input type="checkbox" id="customBox" value="">Long
             </label>
 
-            </form>
+          </div>
               </div>
-                </div>
                   </div>
+
+<!-- S E C O N D - S E C T I O N -->
+
                     <div class="panel panel-default">
                   <div class="panel-heading">
                 <h4 class="panel-title">
@@ -361,34 +427,35 @@
 
 
           <form id="collapse1" class="panel-collapse collapse in">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">MUST BE GOO WITH<span class="caret"></span></a>
-              <br>
+            <span class="detailTitle">Must Be Good With</span>
+              <br><br />
                 <label class="checkbox-inline">
-                  <input type="checkbox" value="">KIDS
+                  <input type="checkbox" id="customBox" value="">Kids
                     </label>
                       <label class="checkbox-inline">
-                        <input type="checkbox" value="">DOGS
+                        <input type="checkbox" id="customBox" value="">Dogs
                           </label>
                         <label class="checkbox-inline">
-                      <input type="checkbox" value="">CATS
+                      <input type="checkbox" id="customBox" value="">Cats
                     </label>
                   </form>
-                <br><p>MUST BE HOUSE TRAINED</p><br>
+                  <hr />
+                <span class="detailTitle">MUST BE HOUSE TRAINED</span><br><br />
               <label class="switch">
-            <input type="checkbox">
+            <input type="checkbox" id="customBox">
           <div class="slider round"></div>
-        </label>
-      <br><br><p>MUST BE HYPOALLEERGENIC</p><br>
+        </label><br />
+      <br><hr /><span class="detailTitle">MUST BE HYPOALLEERGENIC</span><br><br />
         <label class="switch">
-          <input type="checkbox">
+          <input type="checkbox" id="customBox">
             <div class="slider round"></div>
               </label>
-                <br><br><p>ONLY SHOW SPECIAL NEEDS</p><br>
+                <br><br /><hr /><span class="detailTitle">ONLY SHOW SPECIAL NEEDS</span><br><br />
                   <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" id="customBox">
                       <div class="slider round"></div>
                         </label>
-                          <br>
+                          <br><br />
                         </div>
                       </div>
                     </div>
@@ -408,7 +475,7 @@
               </div>
                 <br><br><p>SORT BY</p>
                   "DISTANCE...   "<label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" id="customBox">
                       <div class="slider round"></div><br>
                         </label>"   ...RELEVANCE  "
                         <!-- survey by: chris jauregui ... keep it funky yallllllllll -->
@@ -421,6 +488,7 @@
                         </div>
                       </div>
                     </div>
+                  </div>
                 <footer class="container-fluid text-center">
               <p><i class="glyphicon glyphicon-copyright-mark"></i>PetPals 2017</p>
             <span>
