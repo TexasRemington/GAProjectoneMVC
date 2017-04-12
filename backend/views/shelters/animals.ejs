@@ -8,10 +8,21 @@
     <h1>Animals</h1>
 
     <% for (var i=0, x=animals.length; i<x; i++) { %>
-      <img src="<%= animals[i].imageUrl %>" />
+
       <p>Name: <%= animals[i].name %></p>
-      <p>Description: <%= animals[i].description %></p>
-      <p>Bread: <%= animals[i].breed %></p>
+      <p>Species: <%= animals[i].species %></p>
+      <p>Breed: <%= animals[i].breed %></p>
+      <p>Size: <%= animals[i].size %></p>
+      <p>Age: <%= animals[i].age %></p>
+      <p>Gender: <%=animals[i].gender %></p>
+      <p>Hairtype: <%= animals[i].hairType %></p>
+      <p>Family: <%= animals[i].family %></p>
+      <p>Energylevel: <%= animals[i].energyLevel %></p>
+      <p>Training: <%= animals[i].trainingNeeds %></p>
+      <p>Dependency: <%= animals[i].dependency %></p>
+      <p>Hypoallergenic <%= animals[i].hypoallergenic %></p>
+      <img src="<%= animals[i].imageUrl %>" />
+      <p>Shelter: <%= animals[i].shelter %></p>
     <% } %>
   </body>
 </html>
