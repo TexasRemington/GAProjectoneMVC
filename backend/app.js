@@ -11,7 +11,7 @@ var cors = require('cors');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-// var animals = require('./routes/animals');
+var animals = require('./routes/animals');
 var shelters = require('./routes/shelters');
 var profiles = require('./routes/profiles');
 
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-// app.use('/animals', animals);
+app.use('/animals', animals);
 app.use('/shelters', shelters);
 app.use('/profiles', profiles);
 
