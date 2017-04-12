@@ -2,30 +2,6 @@
  var router = express.Router();
  var Animal = require('../models/animal');
 
-    var animalAtt = new Animal({
-      name: req.body.name,
-      species: req.body.species,
-      breed: req.body.breed,
-      size: req.body.size,
-      age: req.body.age,
-      gender: req.body.gender,
-      hairType: req.body.hairType,
-      family: req.body.family,
-      energyLevel: req.body.energyLevel,
-      trainingNeeds: req.body.trainingNeeds,
-      dependency: req.body.dependency,
-      hypoallergenic: req.body.hypoallergenic,
-      image: req.body.imageUrl,
-      shelterId: req.body.shelterId
-    });
-
-// /* GET home page. */
- //router.get('/', function(req, res, next) {
-//  Animals.find({}).exec(function(err,animals){
-//   if(err) console.log(err);
-//    res.json(animals.reverse().slice(0,12));
-//  });
-// });
 
  router.get('/', function(req, res, next) {
   Animal.find({}, function(err, animals) {
@@ -40,7 +16,7 @@
   });
 });
 
-  router.animal('/',function(req,res,next){
+router.post('/',function(req,res,next){
 
   var newAnimal = new Animal({
     name: req.body.name,
@@ -71,13 +47,27 @@
       });
     }
   });
-
 });
 
 
   router.patch('/', function(req, res, next){
     Animal.FindById(req.body.id, function(err,animal){
       if(err) console.log(err);
+
+          animal.name = req.body.name || profile.name;
+          animal.species = req.body.picture || profile.picture;
+          animal.breed = req.body.provider || profile.provider;
+          animal.size = req.body.user_id || profile.user_id;
+          animal.age = req.body.age || animal.age;
+          animal.gender = req.body.gender || animal.gender;
+          animal.hairType = req.body.hairType || animal.hairType;
+          animal.family = req.body.family || animal.family;
+          animal.energyLevel = req.body.energyLevel || animal.energyLevel;
+          animal.trainingNeeds = req.body.trainingNeeds || animal.trainingNeeds;
+          animal.dependency = req.body.dependency || animal.dependency;
+          animal.hypoallergenic = req.body.hypoallergenic || animal.hypoallergenic;
+          animal.image = req.body.image || animal.image;
+          animal.shelterId = req.body.shelterId || animal.shelterId;
 
       animal.save(function(err,animal){
         if(err) console.log(err);
