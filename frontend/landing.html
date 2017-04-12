@@ -45,11 +45,13 @@ h1 {
   line-height: 34px !important;
   padding: 30px 0;
   margin-bottom: 20px;
+  margin-top: -125px;
 }
 
 
 .row.green-box h1{
   color: #ffffff;
+  margin-top: -100px;
 }
     /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
@@ -62,7 +64,7 @@ h1 {
     letter-spacing: 0px;
     border-radius: 0;
     font-family: Lato-bold, sans-serif;
-    box-shadow: 2px 2px 2px 2px #888888;
+    box-shadow: 2px 2px 2px #888888;
 }
 .navbar li a, .navbar .navbar-brand {
     color: #fff !important;
@@ -119,18 +121,19 @@ h1 {
 
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
+      body{
+        margin: 0 auto;
+      }
       .sidenav {
         height: auto;
-        padding: 15px;
       }
-      .row.content {height:auto;}
+      .row.content {max-height:100%;
+      min-width: 100%;}
 
     .circle{
       position: absolute;
       margin-left: 35% !important;
-      margin-top: -75px !important;
-      height: 300px;
-      z-index: 9999;
+      margin-top: -175px !important;
     }
     .circleStyle{
       height: 150px !important;
@@ -144,6 +147,47 @@ h1 {
       font-size: 24px;
       text-align: center;
     }
+
+    .row.green-box{
+      display: none;
+    }
+    .browseDogs{
+      margin-top: -250px;
+      margin-left: 0 !important;
+      height: 400px;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 32px;
+      color: white;
+      text-shadow: 0px 2px gray;
+    }
+    .browseCats{
+      float: none !important;
+      margin-top: -225px !important;
+      margin-left: 0 !important;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 32px;
+      color: white;
+      text-shadow: 0px 2px gray;
+    }
+    .row.green-box h1{
+      display: none;
+    }
+    .img-responsive{
+      margin-top: -75px;
+      height: 50vh;
+      width: 100vw !important;
+    }
+    .titleText{
+      display: none;
+    }
+    .imgTile{
+      display: none;
+    }
+    .col-sm-6{
+      margin-right: 0 !important;
+    }
 }
 /* STYLING */
     h1.titleText{
@@ -155,12 +199,14 @@ h1 {
     h1.missionTitle{
       font-family: 'Lato', sans-serif;
       font-size: 36px;
+      font-weight: normal;
       color: #FFFFFF;
-      text-shadow: 2px 2px gray;
+      text-shadow: 0px 2px gray;
     }
 
-    p{
+    p.landingText{
       font-family: 'Lato',sans-serif;
+      font-weight: normal;
       font-size: 24px;
     }
     .circle{
@@ -180,12 +226,37 @@ h1 {
       color: white;
       padding-top: 90px;
       font-size: 24px;
+      font-family: 'Lato',sans-serif;
       text-align: center;
     }
     .browseDogs{
-      position: absolute;
-      
+      margin-top: -250px;
+      margin-left: 150px;
       height: 400px;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 32px;
+      color: white;
+      text-shadow: 0px 2px gray;
+    }
+    .browseCats{
+      float: right;
+      margin-top: -250px;
+      margin-right: 150px;
+      height: 400px;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 32px;
+      color: white;
+      text-shadow: 0px 2px gray;
+    }
+    .dogIcon{
+      max-height: 30%;
+      max-width: 30%;
+    }
+    .catIcon{
+      max-height: 30%;
+      max-width: 30%;
     }
 
   </style>
@@ -218,10 +289,13 @@ h1 {
 <div class="container-fluid text-center">
   <div class="row">
     <h1 class="titleText">We match people with pets</h1>
+    <br />
+    <br />
     <div class="row">
       <div class="col-sm-6">
         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%;" alt="Image">
-        <div class="col-sm-1 browseDogs">
+        <div class="col-sm-6 browseDogs">
+          <img src="images/dog.svg" class="dogIcon" /><br /><br />
           BROWSE DOGS
         </div>
       </div>
@@ -232,51 +306,54 @@ h1 {
       </div>
       <div class="col-sm-6">
         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-        <!-- <p>pet 2</p> -->
+        <div class="col-sm-6 browseCats">
+          <img src="images/cat.svg" class="catIcon" /><br /><br />
+          BROWSE CATS
+        </div>
       </div>
     </div>
     <div class="row green-box">
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
       <h1 class="missionTitle">OUR MISSION</h1>
-      <p>PetPals aims to help keep the Austin no-kill ratio above 95% by matching
+      <p class="landingText">PetPals aims to help keep the Austin no-kill ratio above 95% by matching
       pets with their most compatible owner. Through our efforts we hope to
       create forever homes for our friendly pals!</p>
     </div>
     <div class="col-sm-1"></div>
   </div>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3 imgTile">
         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
         <p>pet 1</p>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-3 imgTile">
         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
         <p>pet 2</p>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-3 imgTile">
         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
         <p>pet 3</p>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-3 imgTile">
         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
         <p>pet 4</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3 imgTile">
         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
         <p>pet 5</p>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-3 imgTile">
         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
         <p>pet 6</p>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-3 imgTile">
         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
         <p>pet 7</p>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-3 imgTile">
         <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
         <p>pet 8</p>
       </div>
