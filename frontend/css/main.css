@@ -292,6 +292,210 @@ a{
 
 }
 
+/* B R O W S E - P A G E */
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: #f1f1f1;
+}
+
+/* Set black background color, white text and some padding */
+
+footer {
+  background-color: rgba(0, 0, 0, 0.65);
+  font-size: 15px !important;
+  color: #ffffff;
+  padding: 15px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+footer a {
+    color: #f5f5f5;
+}
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+footer p {
+display: inline-block;
+margin: .25rem 0 0 0;
+float: left;
+}
+footer span {
+ float: right;
+ margin-right: 40px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 0;
+  }
+  .row.content {height:auto;}
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(246,166,35);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(246,166,35);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.filterButton{
+  padding-top: 10px;
+  background-color: rgba(246, 166, 35, 1);
+  color: white;
+  min-width: 100%;
+  min-height: 100%;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  text-align: left;
+  font-size: 1em;
+  letter-spacing: .1em;
+}
+
+.filterButton:after, .filterButton:active, .filterButton:visited, .filterButton:focus{
+  background-color: rgba(246,166,35,1) !important;
+  outline: none !important;
+}
+
+.filterButton:hover{
+  background-color: rgba(246,166,35,.5) !important;
+}
+
+.sidenav{
+  margin: 0;
+  background-color: rgb(255,255,255) !important;
+}
+
+.filterIcon{
+  float: right;
+  max-width: 25px;
+  max-height: 25px;
+}
+
+.panel-collapse, .panel-default, .panel-heading{
+  background-color: white !important;
+  border-radius: 0;
+  margin: 0;
+}
+
+.panel-title a:hover, .panel-title a:focus{
+  text-decoration: none !important;
+}
+
+span.caret{
+  float: right;
+}
+
+.detailTitle{
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+div.container-fluid.text-center{
+  text-align: left;
+}
+
+div.panel.panel-default{
+  margin-bottom: -2px;
+}
+
+div.panel-heading{
+  margin: 0;
+}
+div.panel{
+  min-width: 100%;
+}
+
+h4{
+  font-family: 'Lato', sans-serif;
+}
+
+.checkbox-inline{
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #4A4A4A;
+}
+.caret.caret-up {
+  border-top-width: 0;
+  border-bottom: 4px solid #000000;
+}
+
+/* - - - - - - - - - - - D E T A I L S - P A G E - - - - - - - - - - - */
+
+.panel-primary>.panel-heading{
+  background-color: #F6A623;
+}
+
+/* TEXT STYLING */
+h1{
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+}
+p{
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 27px;
+}
+
 /* I M A G E - S T Y L I N G */
 
 img.className{
