@@ -2,7 +2,7 @@
  var router = express.Router();
  var Animal = require('../models/animal');
 
-    var addAnimal = new Animal({
+    var animalAtt = new Animal({
       name: req.body.name,
       species: req.body.species,
       breed: req.body.breed,
@@ -42,7 +42,21 @@
 
   router.animal('/',function(req,res,next){
 
-  var addAnimal = new Animal({
+  var newAnimal = new Animal({
+    name: req.body.name,
+    species: req.body.species,
+    breed: req.body.breed,
+    size: req.body.size,
+    age: req.body.age,
+    gender: req.body.gender,
+    hairType: req.body.hairType,
+    family: req.body.family,
+    energyLevel: req.body.energyLevel,
+    trainingNeeds: req.body.trainingNeeds,
+    dependency: req.body.dependency,
+    hypoallergenic: req.body.hypoallergenic,
+    image: req.body.imageUrl,
+    shelterId: req.body.shelterId
   });
 
   newAnimal.save(function(err, animal){
@@ -62,7 +76,7 @@
 
 
   router.patch('/', function(req, res, next){
-    Animal.findById(req.body.id, function(err,animal){
+    Animal.FindById(req.body.id, function(err,animal){
       if(err) console.log(err);
 
       animal.save(function(err,animal){
