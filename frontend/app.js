@@ -171,18 +171,9 @@ function addProfileLocal(profile){
   // function addPet(animal){
   //   var data = {
   //     name: name,
-  //     species: species,
+  //     description: description,
+  //     picture: picture,
   //     breed: breed,
-  //     size: size,
-  //     age: age,
-  //     gender: gender,
-  //     hairType: hairType,
-  //     family: family,
-  //     energy level: energyLevel,
-  //     training needs: trainingNeeds,
-  //     dependency: dependency,
-  //     hypoallergenic: hypoallergenic,
-  //     picture: imageUrl,
   //     shelter: shelterId
   //   };
     //
