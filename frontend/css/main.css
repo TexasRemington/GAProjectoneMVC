@@ -1,0 +1,534 @@
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+N E C E S S A R Y - F I L E S
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+R O B O T O - F O N T
+- - - - - - - - - - - -
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+
+L A T O - F O N T
+- - - - - - - - - - - -
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+*/
+
+/* N A V I G A T  I O N */
+
+.navbar {
+margin-bottom: 40px;
+background-color: #6FB002;
+z-index: 9999;
+border: 0;
+font-size: 20px !important;
+line-height: 1.2 !important;
+letter-spacing: 0px;
+border-radius: 0;
+font-family: 'Lato', sans-serif;
+font-weight: bold;
+}
+.navbar li a, .navbar .navbar-brand {
+color: #fff !important;
+font-weight: lighter;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+color: rgba(151, 151, 151, 1) !important;
+background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+border-color: transparent;
+color: #fff !important;
+}
+.navbar-brand {
+font-size: 40px !important;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+}
+
+/* Set black background color, white text and some padding */
+
+footer {
+  background-color: rgba(0, 0, 0, 0.75);
+  font-size: 15px !important;
+  color: #ffffff;
+  padding: 15px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+footer a {
+    color: #f5f5f5;
+}
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+footer p {
+display: inline-block;
+margin: .25rem 0 0 0;
+float: left;
+}
+footer span {
+ float: right;
+ margin-right: 40px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;}
+}
+
+.panel-primary>.panel-heading{
+  background-color: #F6A623;
+}
+
+/* T E X T - S T Y L I N G */
+
+body{
+  font-family: 'Lato', sans-serif;
+  font-size: 36px;
+  color: rgb(255,255,255);
+}
+
+/* H O M E - P A G E */
+
+h1{
+  font-family: 'Lato', sans-serif;
+  font-size: 36px;
+  color: #FFFFFF;
+}
+
+h1 HELPMECHOOSE{
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(255,255,255);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+BROWSEPETS{
+  font-size: 32px;
+  text-shadow: 0px 2px gray;
+}
+
+/* L O G I N - P A G E */
+
+input[type=text].login{
+  font-size: 20px;
+  color: rgba(0,0,0,.28);
+}
+
+p .REMEMBERME{
+
+}
+
+h2.OR{
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgb(0,0,0);
+}
+
+#signUp{
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+}
+
+/* S U R V E Y - P A G E */
+
+h1.surveyTitle{
+  font-size: 36px;
+  text-shadow: 0px 2px gray;
+  line-height: 44px;
+}
+
+p.surveyCopy{
+  font-size: 16px;
+  color: #4A4A4A;
+  line-height: 27px;
+}
+
+.surveyQuestion{
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.surveyProgressBar{
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+/* R E S U L T S - P A G E */
+
+petName{
+  font-size: 24px;
+  color: rgb(0,0,0);
+  text-shadow: 0 2px gray;
+}
+
+matchPercentage{
+  font-size: 20px;
+  font-weight: light;
+  color: rgb(0,0,0);
+  line-height: 24px;
+}
+
+a.viewPet{
+  font-size: 12px;
+  color: #6FB002;
+  line-height: 15px;
+}
+
+/* P E T - P A G E */
+
+h1 petTitle{
+  font-size: 48px;
+  line-height: 24px;
+}
+
+h2.aboutPet{
+  font-size: 20px;
+  font-weight: light;
+  color: rgb(0,0,0);
+  line-height: 24px;
+}
+
+p.petCopy{
+  font-size: 16px;
+  color: #4A4A4A;
+  line-height: 27px;
+}
+
+button.meetPet{
+  height: 75px;
+  background-color: #6FB002;
+}
+
+h2.meetPetText{
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1.7px;
+  line-height: 26px;
+}
+
+/* L O L */
+
+h2{
+  font-size: 24px;
+  color: #000000;
+}
+
+h2 filterText{
+  font-size: 16px;
+  font-weight: bold;
+  color: #4A4A4A;
+}
+
+h2 filterTextCaps{
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(0,0,0,.87);
+  text-transform: uppercase;
+}
+
+h2 textName{
+  font-size: 20px;
+  color: #000000;
+  font-weight: light;
+}
+
+h3 pageTitle{
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+h3 buttonName{
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+h3 {
+
+}
+
+h4{
+  font-size: 18px;
+  font-weight: light;
+  color: rgba(0,0,0,.87);
+  text-transform: uppercase;
+}
+
+h5{
+
+}
+
+h6{
+
+}
+
+p{
+
+}
+
+span{
+
+}
+
+a{
+
+}
+
+/* B R O W S E - P A G E */
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: #f1f1f1;
+}
+
+/* Set black background color, white text and some padding */
+
+footer {
+  background-color: rgba(0, 0, 0, 0.65);
+  font-size: 15px !important;
+  color: #ffffff;
+  padding: 15px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+footer a {
+    color: #f5f5f5;
+}
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+
+footer p {
+display: inline-block;
+margin: .25rem 0 0 0;
+float: left;
+}
+footer span {
+ float: right;
+ margin-right: 40px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 0;
+  }
+  .row.content {height:auto;}
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(246,166,35);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px rgb(246,166,35);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.filterButton{
+  padding-top: 10px;
+  background-color: rgba(246, 166, 35, 1);
+  color: white;
+  min-width: 100%;
+  min-height: 100%;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  text-align: left;
+  font-size: 1em;
+  letter-spacing: .1em;
+}
+
+.filterButton:after, .filterButton:active, .filterButton:visited, .filterButton:focus{
+  background-color: rgba(246,166,35,1) !important;
+  outline: none !important;
+}
+
+.filterButton:hover{
+  background-color: rgba(246,166,35,.5) !important;
+}
+
+.sidenav{
+  margin: 0;
+  background-color: rgb(255,255,255) !important;
+}
+
+.filterIcon{
+  float: right;
+  max-width: 25px;
+  max-height: 25px;
+}
+
+.panel-collapse, .panel-default, .panel-heading{
+  background-color: white !important;
+  border-radius: 0;
+  margin: 0;
+}
+
+.panel-title a:hover, .panel-title a:focus{
+  text-decoration: none !important;
+}
+
+span.caret{
+  float: right;
+}
+
+.detailTitle{
+  font-family: 'Lato', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+div.container-fluid.text-center{
+  text-align: left;
+}
+
+div.panel.panel-default{
+  margin-bottom: -2px;
+}
+
+div.panel-heading{
+  margin: 0;
+}
+div.panel{
+  min-width: 100%;
+}
+
+h4{
+  font-family: 'Lato', sans-serif;
+}
+
+.checkbox-inline{
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #4A4A4A;
+}
+.caret.caret-up {
+  border-top-width: 0;
+  border-bottom: 4px solid #000000;
+}
+
+/* - - - - - - - - - - - D E T A I L S - P A G E - - - - - - - - - - - */
+
+.panel-primary>.panel-heading{
+  background-color: #F6A623;
+}
+
+/* TEXT STYLING */
+h1{
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+}
+p{
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+/* I M A G E - S T Y L I N G */
+
+img.className{
+
+}
+
+img.otherClassName{
+
+}
+
+img#idName{
+
+}
+
+/* L O G I N - S T Y L I N G */
+
+
+
+/* S U R V E Y - S T Y L I N G */
+
+div.className{
+
+}
+
+div#idName{
+
+}
+
+/* G O O G L E - M A P - S T Y L I N G */
+
+#googleMap{
+  height: 400px;
+  max-width: 25%;
+}
+
+/* A N I M A T I O N S */

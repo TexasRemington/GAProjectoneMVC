@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+
+  <style>
+
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
+    border-color: #6FB002;
+    }
+    .navbar {
+    margin-bottom: 40px;
+    background-color: #6FB002;
+    z-index: 9999;
+    border: 0;
+    font-size: 20px !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0px;
+    border-radius: 0;
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+}
+.navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+    font-weight: lighter;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: rgba(151, 151, 151, 1) !important;
+    background-color: #fff !important;
+}
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+}
+.navbar-brand {
+  font-size: 40px !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+    }
+
+    /* Set black background color, white text and some padding */
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.65);
+      font-size: 15px !important;
+      color: #ffffff;
+      padding: 15px;
+      font-family: 'Lato', sans-serif;
+      font-weight: bold;
+    }
+    footer a {
+        color: #f5f5f5;
+    }
+    footer a:hover {
+        color: #777;
+        text-decoration: none;
+    }
+
+    footer p {
+    display: inline-block;
+    margin: .25rem 0 0 0;
+    float: left;
+}
+   footer span {
+     float: right;
+     margin-right: 40px;
+   }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 0;
+      }
+      .row.content {height:auto;}
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      float: left;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {display:none;}
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: rgb(246,166,35);
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px rgb(246,166,35);
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
+    .filterButton{
+      padding-top: 10px;
+      background-color: rgba(246, 166, 35, 1);
+      color: white;
+      min-width: 100%;
+      min-height: 100%;
+      border: 0;
+      border-radius: 0;
+      outline: none;
+      text-align: left;
+      font-size: 1em;
+      letter-spacing: .1em;
+    }
+
+    .filterButton:after, .filterButton:active, .filterButton:visited, .filterButton:focus{
+      background-color: rgba(246,166,35,1) !important;
+      outline: none !important;
+    }
+
+    .filterButton:hover{
+      background-color: rgba(246,166,35,.5) !important;
+    }
+
+    .sidenav{
+      margin: 0;
+      background-color: rgb(255,255,255) !important;
+    }
+
+    .filterIcon{
+      float: right;
+      max-width: 25px;
+      max-height: 25px;
+    }
+
+    .panel-collapse, .panel-default, .panel-heading{
+      background-color: white !important;
+      border-radius: 0;
+      margin: 0;
+    }
+
+    .panel-title a:hover, .panel-title a:focus{
+      text-decoration: none !important;
+    }
+
+    span.caret{
+      float: right;
+    }
+
+    .detailTitle{
+      font-family: 'Lato', sans-serif;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    div.container-fluid.text-center{
+      text-align: left;
+    }
+
+    div.panel.panel-default{
+      margin-bottom: -2px;
+    }
+
+    div.panel-heading{
+      margin: 0;
+    }
+    div.panel{
+      min-width: 100%;
+    }
+
+    h4{
+      font-family: 'Lato', sans-serif;
+    }
+
+    .checkbox-inline{
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: #4A4A4A;
+    }
+    .caret.caret-up {
+      border-top-width: 0;
+      border-bottom: 4px solid #000000;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">PetPals</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Home</a></li>
+          <li class="active"><a href="#">Favorites</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">My Account</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-8 text-left">
+      <div class="row">
+        <div class="col-sm-3">
+          <a href="#" class="thumbnail">
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </a>
+          <p>pet 1</p>
+        </div>
+        <div class="col-sm-3">
+          <a href="#" class="thumbnail">
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </a>
+          <p>pet 2</p>
+        </div>
+        <div class="col-sm-3">
+          <a href="#" class="thumbnail">
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </a>
+          <p>pet 3</p>
+        </div>
+        <div class="col-sm-3">
+          <a href="#" class="thumbnail">
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </a>
+          <p>pet 4</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <a href="#" class="thumbnail">
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </a>
+          <p>pet 5</p>
+        </div>
+        <div class="col-sm-3">
+          <a href="#" class="thumbnail">
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </a>
+          <p>pet 6</p>
+        </div>
+        <div class="col-sm-3">
+          <a href="#" class="thumbnail">
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </a>
+          <p>pet 7</p>
+        </div>
+        <div class="col-sm-3">
+          <a href="#" class="thumbnail">
+          <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+        </a>
+          <p>pet 8</p>
+        </div>
+      </div>
+      <nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>
+<div class="col-sm-4 sidenav">
+                <!-- survey by: chris jauregui ... keep it funky yallllllllll -->
+<div class="panel">
+
+  <button type="button" class="btn btn-info filterButton" data-toggle="collapse" data-target="#filterCollapse">Filter By: <img src="images/filter.svg" class="filterIcon" /></button>
+    <div id="filterCollapse" class="collapse">
+      <!-- <div class="panel-group" id="accordion"> -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+              <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Physical Traits<span class="caret"></span></a>
+          </h4>
+          </div>
+
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class=panel-body>
+          <form id="collapse1" class="panel-collapse collapse in">
+<span class="detailTitle">Age</span>
+<br />
+          <br>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="customBox" value="">Puppy
+            </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="customBox" value="">Young
+                  </label>
+                <label class="checkbox-inline">
+              <input type="checkbox" id="customBox" value="">Adult
+            </label>
+          <label class="checkbox-inline">
+        <input type="checkbox" id="customBox" value="">Senior
+          </label>
+        </form>
+              <hr />
+<span class="detailTitle">Size</span>
+<br />
+                  <br>
+                <label class="checkbox-inline">
+              <input type="checkbox" id="customBox" value="">Toy
+          </label>
+      <label class="checkbox-inline">
+        <input type="checkbox" id="customBox" value="">Small
+        </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="customBox" value="">Medium
+              </label>
+                <label class="checkbox-inline">
+              <input type="checkbox" id="customBox" value="">Giant
+            </label>
+        <hr />
+      <span class="detailTitle">Gender</span>
+    <br>
+    <br />
+      <label class="checkbox-inline">
+        <input type="checkbox" id="customBox" value="">Male
+          </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="customBox" value="">Female
+                </label>
+
+                  <hr />
+                  <span class="detailTitle">Hair Length</span>
+                  <br />
+              <br>
+            <label class="checkbox-inline">
+          <input type="checkbox" id="customBox" value="">Short
+        </label>
+      <label class="checkbox-inline">
+    <input type="checkbox" id="customBox" value="">Medium
+      </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" id="customBox" value="">Long
+            </label>
+
+          </div>
+              </div>
+                  </div>
+
+<!-- S E C O N D - S E C T I O N -->
+
+                    <div class="panel panel-default">
+                  <div class="panel-heading">
+                <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Household Needs<span class="caret"></span></a>
+            </h4>
+          </div>
+        <div id="collapse2" class="panel-collapse collapse">
+      <div class="panel-body">
+
+
+          <form id="collapse1" class="panel-collapse collapse in">
+            <span class="detailTitle">Must Be Good With</span>
+              <br><br />
+                <label class="checkbox-inline">
+                  <input type="checkbox" id="customBox" value="">Kids
+                    </label>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" id="customBox" value="">Dogs
+                          </label>
+                        <label class="checkbox-inline">
+                      <input type="checkbox" id="customBox" value="">Cats
+                    </label>
+                  </form>
+                  <hr />
+                <span class="detailTitle">MUST BE HOUSE TRAINED</span><br><br />
+              <label class="switch">
+            <input type="checkbox" id="customBox">
+          <div class="slider round"></div>
+        </label><br />
+      <br><hr /><span class="detailTitle">MUST BE HYPOALLEERGENIC</span><br><br />
+        <label class="switch">
+          <input type="checkbox" id="customBox">
+            <div class="slider round"></div>
+              </label>
+                <br><br /><hr /><span class="detailTitle">ONLY SHOW SPECIAL NEEDS</span><br><br />
+                  <label class="switch">
+                    <input type="checkbox" id="customBox">
+                      <div class="slider round"></div>
+                        </label>
+                          <br><br />
+                        </div>
+                      </div>
+                    </div>
+                  <div class="panel panel-default">
+                <div class="panel-heading">
+              <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Location<span class="caret"></span></a>
+          </h4>
+        </div>
+      <div id="collapse3" class="panel-collapse collapse">
+    <div class="panel-body">
+
+      <form>
+        <div class="form-group">
+          <label for="usr">ZIP/POSTAL CODE</label>
+            <input type="text" class="form-control" id="usr">
+              </div>
+                <br><br><p>SORT BY</p>
+                  "DISTANCE...   "<label class="switch">
+                    <input type="checkbox" id="customBox">
+                      <div class="slider round"></div><br>
+                        </label>"   ...RELEVANCE  "
+                        <!-- survey by: chris jauregui ... keep it funky yallllllllll -->
+
+                          </form>
+                            </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <footer class="container-fluid text-center">
+              <p><i class="glyphicon glyphicon-copyright-mark"></i>PetPals 2017</p>
+            <span>
+          <a href="#">SHELTER LOGIN</a>
+        </span>
+    </footer>
+  </body>
+</html>

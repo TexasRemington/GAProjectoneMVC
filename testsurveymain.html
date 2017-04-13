@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    <script src="https://surveyjs.azureedge.net/0.12.7/survey.jquery.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+<form class="" action="index.html" method="post">
+
+
+<p><input name="selector[]" id="ad_Checkbox1" class="ads_Checkbox" type="checkbox" name="answer[]" value="1" />a</p>
+<p><input name="selector[]" id="ad_Checkbox2" class="ads_Checkbox" type="checkbox" name="answer[]" value="2" />b</p>
+<p><input name="selector[]" id="ad_Checkbox3" class="ads_Checkbox" type="checkbox" name="answer[]" value="3" />c</p>
+<p><input name="selector[]" id="ad_Checkbox4" class="ads_Checkbox" type="checkbox" name="answer[]" value="4" />d</p>
+<p><input type="button" id="save_value" type="submit" name="submit" value="submit" /></p>
+</form>
+
+<script type="text/javascript">
+
+// $('#save_value').click(function(){
+//     var final = '';
+//     $('.ads_Checkbox:checked').each(function(){
+//         var values = $(this).val();
+//         final += values;
+//     });
+//     alert(final);
+// });
+
+
+
+$('#save_value').click(function(){
+$('.ads_Checkbox:checked').each(function(){
+     alert($(this).val());
+                       });});
+
+
+</script>
+
+  </body>
+</html>
