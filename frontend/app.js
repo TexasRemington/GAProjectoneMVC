@@ -1,18 +1,17 @@
 $(document).ready(function() {
-
+  console.log('Sanity Check');
   var lock = new Auth0Lock(AUTH0_CLIENT_ID, AUTH0_DOMAIN, {
     auth: {
       params: { scope: 'openid email' } //Details: https://auth0.com/docs/scopes
     }
   });
-
   var domain = 'http://localhost:5000';
+  var paramId = window.location.search.substr(1)
   // var socket = io(domain);
   //
   // socket.on('connect', function(){
   //   console.log('Connected');
   // });
-
   // What we want to do once we've logged in
   lock.on("authenticated", function(authResult) {
     lock.getProfile(authResult.idToken, function(error, profile) {
@@ -20,16 +19,13 @@ $(document).ready(function() {
         // Handle error
         return;
       }
-
       localStorage.setItem('id_token', authResult.idToken);
       localStorage.setItem('profile', JSON.stringify(profile));
-
       // Display user information
       show_profile_info(profile);
       checkProfile(profile);
     });
   });
-
   // retrieve the profile:
   var retrieve_profile = function() {
     var id_token = localStorage.getItem('id_token');
@@ -40,11 +36,9 @@ $(document).ready(function() {
         }
         // Display user information
         show_profile_info(profile);
-
       });
     }
   };
-
   // show profile info once logged in
   var show_profile_info = function(profile) {
      console.log(profile);
@@ -52,12 +46,10 @@ $(document).ready(function() {
      $('.btn-login').hide();
      $('.splash-heading').hide();
      $('.btn-logout').show();
-
-    //  getGrowlHtml();
+     getGrowlHtml();
+     getDetailsHtml();
     //  getGrowlForm();
   };
-
-
   // function getGrowlForm(){
   //   $.ajax({
   //     url: '/components/form.json',
@@ -71,36 +63,31 @@ $(document).ready(function() {
   //
   // function getGrowlHtml(){
   //   $.ajax({
-  //     url: '/components/growls.json',
-  //     method: 'GET'
+  //    url: '/browse.html',
+  //    method: 'GET'
   //   }).done(function(response){
-  //     $('body').prepend(response.html);
-  //     // refreshGrowls();
-  //   }).fail(function(error){
-  //     console.error(error);
-  //   });
-  // };
-
-
-
+  //      $('body').prepend(response.html);
+  //       addPetLocal();
+  //  }).fail(function(error){
+  //      console.error(error);
+  //    });
+  //  };
+  //
+  //
   var logout = function() {
     localStorage.removeItem('id_token');
     localStorage.removeItem('profile');
-    window.location.href = "/";
+    window.location.href = "/landing.html";
   };
-
   function setHandlers(){
     $('.btn-login').click(function(e) {
       e.preventDefault();
       lock.show();
     });
-
     $('.btn-logout').click(function(e) {
       e.preventDefault();
       logout();
-
     });
-
   //   $('body').on('submit','.add-growl',function(e){
   //     e.preventDefault();
   //     var text = $(this).find('.growl').val();
@@ -110,20 +97,16 @@ $(document).ready(function() {
   //     $('.class-growls li').last().remove();
   //   });
 };
-
 function checkProfile(profile){
   // var data = {
   //   user_id: user_id
   // };
-
   $.ajax({
     url: domain + '/profiles',
     method: 'GET'
-
   }).done(function(response){
     var user_ids = [];
     var match = '';
-
     for(i=0,x=response.length;i<x;i++){
        user_ids.push(response[i].user_id);
     };
@@ -137,7 +120,6 @@ function checkProfile(profile){
     console.error('Error: ', error);
   });
 };
-
 function addProfile(profile){
   var data = {
     name: profile.given_name + ' ' + profile.family_name,
@@ -145,7 +127,6 @@ function addProfile(profile){
     provider: profile.identities[0].provider,
     user_id: profile.identities[0].user_id
   };
-
   $.ajax({
     url: domain + '/profiles',
     method: 'POST',
@@ -167,7 +148,6 @@ function addProfileLocal(profile){
     '</li>'
   ].join(''));
 };
-
 function quiz(survey){
   var data = {
     q1: survey.species,
@@ -181,95 +161,83 @@ function quiz(survey){
     q9: '',
     q10: ''
   };
-
   $.ajax({
     url: domain + '/profiles',
     method: 'PATCH',
     data: data
   }).done(function(response){
-
   }).fail(function(error){
-
   });
 };
-
-  // function addPet(animal){
-  //   var data = {
-  //     name: name,
-  //     description: description,
-  //     picture: picture,
-  //     breed: breed,
-  //     shelter: shelterId
-  //   };
+   function addPet(animal){
+  //  var data = {
+  //    name: animal.name,
+  //    species: animal.species,
+  //    breed: animal.breed,
+  //    size: animal.size,
+  //    age: animal.age,
+  //    gender: animal.gender,
+  //    hairType: animal.hairType,
+  //    family: animal.family,
+  //    energyLevel: animal.energyLevel,
+  //    trainingNeeds: animal.trainingNeeds,
+  //    dependency: animal.dependency,
+  //    hypoallergenic: animal.hypoallergenic,
+  //    image: animal.imageUrl,
+  //    shelterId: animal.shelterId
+  //  };
     //
-    // $.ajax({
-    //   url: domain + '/growl',
-    //   method: 'POST',
-    //   data: data
-    // }).done(function(response){
-    //   // put the growl into the DOM
-    //   console.log('Growl was added to the DB! ', response);
-    //   addGrowlLocal(response)
-    // }).fail(function(error){
-    //   console.error('Error: ', error);
-    // });
-
+     $.ajax({
+       url: domain + '/animals',
+      method: 'GET',
+      // data: data
+     }).done(function(response){
+       // put the growl into the DOM
+      console.log('Got all the animals ', response);
+addPetLocal(response)
+    }).fail(function(error){
+       console.error('Error: ', error);
+   });
   //   socket.emit('add growl', data);
-  // };
+   };
   //
-  // function addGrowlLocal(growl){
-  //   $('.class-growls').prepend([
-  //     '<li>',
-  //       '<p>'+growl.name+'</p>',
-  //       '<p><img src="'+(growl.image || 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg')+'"/></p>',
-  //       '<p>'+growl.text+'</p>',
-  //       '<p>'+growl.provider+'</p>',
-  //     '</li>'
-  //   ].join(''));
-  // };
-
-  // function refreshGrowls(){
-  //   $.ajax({
-  //     url: domain + '/growl',
-  //     method: 'GET'
-  //   }).done(function(response){
-  //       put the growl into the DOM
-        // response.reverse().forEach(function(growl,index){
-        //     addGrowlLocal(growl);
-        // });
-  //   }).fail(function(error){
-  //     console.error('Error: ', error);
-  //   });
-  // };
-
-
-  // socket.on('send growls', function(growls){
-  //   // put the growl into the DOM
-  //   $('.class-growls').empty();
-  //   growls.reverse().forEach(function(growl,index){
-  //     addGrowlLocal(growl);
-  //   });
-  // });
-  // 
-  // Survey.Survey.cssType = "bootstrap";
-  // var surveyJSON = {pages:[{elements:[{type:"radiogroup",choices:[{value:"1",text:"Dog"},{value:"2",text:"Cat"}],name:"pet choice",startWithNewLine:false,title:"Do you want a dog or a cat?"}],name:"page1"},{elements:[{type:"checkbox",choices:[{value:"1",text:"Tiny/Small"},{value:"2",text:"Medium"},{value:"3",text:"Large/Giant"}],name:"Size",title:"Size"}],name:"page2"},{elements:[{type:"checkbox",choices:[{value:"1",text:"Less then a year"},{value:"2",text:"1-3"},{value:"3",text:"3-7"},{value:"4",text:"Senior"}],name:"Age",title:"Age"}],name:"page3"},{elements:[{type:"radiogroup",choices:[{value:"1",text:"Male"},{value:"2",text:"Female"}],name:"Sex",title:"Sex"}],name:"page4"},{elements:[{type:"checkbox",choices:[{value:"1",text:"Short"},{value:"2",text:"Medium"},{value:"3",text:"Long"},{value:"4",text:"Hairless"}],name:"Hair Type",title:"Hair Type"}],name:"page5"},{elements:[{type:"checkbox",choices:[{value:"1",text:"Kids"},{value:"2",text:"Dogs"},{value:"3",text:"Cats"},{value:"4",text:"All"}],name:"Family",title:"Family"}],name:"page6"},{elements:[{type:"checkbox",choices:[{value:"1",text:"House Trained"},{value:"2",text:"Needs Training"},{value:"3",text:"Trainable"}],name:"Training ",title:"Training Needs"}],name:"page7"},{elements:[{type:"radiogroup",choices:[{value:"1",text:"Yes"},{value:"2",text:"No"}],name:"Alergies",title:"Hypoallergenic "}],name:"page8"},{elements:[{type:"checkbox",choices:[{value:"1",text:"Needs Supervisions"},{value:"2",text:"Left Alone for short period of time"},{value:"3",text:"Independent"}],name:"needs",startWithNewLine:false,title:"Dependency"}],name:"page9"},{elements:[{type:"radiogroup",choices:[{value:"1",text:"High"},{value:"2",text:"medium"},{value:"3",text:"Low"},{value:"4",text:"Lazy as fuckkkkkkk"}],name:"Energy",startWithNewLine:false,title:"Energy Level"}],name:"page10"}],showProgressBar:"bottom"}
-  // function sendDataToServer(survey) {
-  //     //send Ajax request to your web server.
-  //     alert("The results are:" + JSON.stringify(s.data));
-  // }
-  // var survey = new Survey.Model(surveyJSON);
-  // $("#surveyContainer").Survey({
-  //     model: survey,
-  //     onComplete: sendDataToServer
-  // });
-
-
+//   $.ajax({
+//     url: domain +'/animals/'+paramId+'/animals',
+//    method: 'GET'
+//    // data: data
+//  }).done(function(response){
+//     // put the growl into the DOM
+//   console.log('this is the call ', window.location.search.substr(1))
+//   console.log('Got the details of  animals ', response);
+//
+//  }).fail(function(error){
+//     console.error('Error: ', error);
+// });
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// - - - - - - - - A D D - D A T A - F R O M - D A T A B A S E - - - - - - - -
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ //   function addPetLocal(response){
+ //     for(var i=0; i<8; i++){
+ //     var image = response[i].imageUrl;
+ //     var name = response[i].name;
+ //     var shelterId = response[i]._id;
+ //   $('.thumbnail').prepend([
+ //     '<div class="col-sm-3 crop">',
+ //    //  '<a href = "/details.html?' +shelterId+ '">',
+ //    '<a href = "/details.html?' + shelterId+ '">',
+ //     '<img src="'+( image || 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg')+'" class="img-responsive browseImg"/>',
+ //     '<p>'+ name +'</p>',
+ //     '<p>'+ shelterId +'</p>',
+ //       '</a>',
+ //       '</div>'
+ //    ].join(''));
+ //  };
+ // };
 
   function main(){
     retrieve_profile();
     setHandlers();
-
+    addPet();
   };
-
   main();
 });

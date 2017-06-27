@@ -11,259 +11,23 @@
   <link href="https://fonts.googleapis.com/css?family=Lato|Roboto"
    rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
 
-  <script type="text/javascript">
-  function toggleChevron(e) {
-  $(e.target)
-      .prev('.panel-heading')
-      .find("i.indicator")
-      .toggleClass('fa-caret-down fa-caret-right');
-}
-$('#accordion').on('hidden.bs.collapse', toggleChevron);
-$('#accordion').on('shown.bs.collapse', toggleChevron);
+<!--
+- - - - - - - - -
+Auth0 lock script
+- - - - - - - - -
+-->
 
-  </script>
-  <style>
+      <script src="//cdn.auth0.com/js/lock/10.13.0/lock.min.js"></script>
 
-h1 {
-  font-family: Lato-light, sans-serif;
-  font-weight: lighter;
-  font-size: 48px;
-  letter-spacing: 0;
-  line-height: 1.2 !important;
-  color: rgba(0, 0, 0, 0.87);
-}
+      <script src="auth0-variables.js"></script>
+      <script src="app.js"></script>
 
-
-.row.green-box{
-  background-color: #6FB002;
-  color: #ffffff;
-  font-family: Lato-Regular, sans-serif;
-  font-weight: lighter;
-  font-size: 24px;
-  letter-spacing: 0;
-  line-height: 34px !important;
-  padding: 30px 0;
-  margin-bottom: 20px;
-  margin-top: -125px;
-}
-
-
-.row.green-box h1{
-  color: #ffffff;
-  margin-top: -100px;
-}
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-    margin-bottom: 40px;
-    background-color: #6FB002;
-    z-index: 9999;
-    border: 0;
-    font-size: 20px !important;
-    line-height: 1.2 !important;
-    letter-spacing: 0px;
-    border-radius: 0;
-    font-family: Lato-bold, sans-serif;
-    box-shadow: 2px 2px 2px #888888;
-}
-.navbar li a, .navbar .navbar-brand {
-    color: #fff !important;
-    font-weight: lighter;
-}
-.navbar-nav li a:hover, .navbar-nav li.active a {
-    color: rgba(151, 151, 151, 1) !important;
-    background-color: #fff !important;
-}
-.navbar-default .navbar-toggle {
-    border-color: transparent;
-    color: #fff !important;
-}
-.navbar-brand {
-  font-size: 40px !important;
-}
-
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
-
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-    }
-
-    /* Set black background color, white text and some padding */
-
-    footer {
-      background-color: rgba(0, 0, 0, 0.75);
-      font-size: 15px !important;
-      color: #ffffff;
-      padding: 15px;
-      font-family: Lato, sans-serif;
-      font-weight: bold;
-    }
-    footer a {
-        color: #f5f5f5;
-    }
-    footer a:hover {
-        color: #777;
-        text-decoration: none;
-    }
-
-    footer p {
-    display: inline-block;
-    margin: .25rem 0 0 0;
-    float: left;
-}
-   footer span {
-     float: right;
-     margin-right: 40px;
-   }
-
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      body{
-        margin: 0 auto;
-      }
-      .sidenav {
-        height: auto;
-      }
-      .row.content {max-height:100%;
-      min-width: 100%;}
-
-    .circle{
-      position: absolute;
-      margin-left: 35% !important;
-      margin-top: -175px !important;
-    }
-    .circleStyle{
-      height: 150px !important;
-      width: 150px !important;
-      border-radius: 100% !important;
-      background-color: rgba(111, 176, 2, 1);
-      z-index: 2;
-      border: 2px solid rgb(255,255,255);
-      color: white;
-      padding-top: 40px !important;
-      font-size: 24px;
-      text-align: center;
-    }
-
-    .row.green-box{
-      display: none;
-    }
-    .browseDogs{
-      margin-top: -250px;
-      margin-left: 0 !important;
-      height: 400px;
-      text-align: center;
-      font-family: 'Lato', sans-serif;
-      font-size: 32px;
-      color: white;
-      text-shadow: 0px 2px gray;
-    }
-    .browseCats{
-      float: none !important;
-      margin-top: -225px !important;
-      margin-left: 0 !important;
-      text-align: center;
-      font-family: 'Lato', sans-serif;
-      font-size: 32px;
-      color: white;
-      text-shadow: 0px 2px gray;
-    }
-    .row.green-box h1{
-      display: none;
-    }
-    .img-responsive{
-      margin-top: -75px;
-      height: 50vh;
-      width: 100vw !important;
-    }
-    .titleText{
-      display: none;
-    }
-    .imgTile{
-      display: none;
-    }
-    .col-sm-6{
-      margin-right: 0 !important;
-    }
-}
-/* STYLING */
-    h1.titleText{
-      font-family: 'Lato', sans-serif;
-      font-weight: lighter;
-      font-size: 48px;
-    }
-
-    h1.missionTitle{
-      font-family: 'Lato', sans-serif;
-      font-size: 36px;
-      font-weight: normal;
-      color: #FFFFFF;
-      text-shadow: 0px 2px gray;
-    }
-
-    p.landingText{
-      font-family: 'Lato',sans-serif;
-      font-weight: normal;
-      font-size: 24px;
-    }
-    .circle{
-      position: absolute;
-      margin-left: 41.5%;
-      margin-top: 3%;
-      height: 400px;
-      z-index: 9999;
-    }
-    .circleStyle{
-      height: 250px;
-      width: 250px;
-      border-radius: 100%;
-      background-color: rgba(111, 176, 2, 1);
-      z-index: 2;
-      border: 2px solid rgb(255,255,255);
-      color: white;
-      padding-top: 90px;
-      font-size: 24px;
-      font-family: 'Lato',sans-serif;
-      text-align: center;
-    }
-    .browseDogs{
-      margin-top: -250px;
-      margin-left: 150px;
-      height: 400px;
-      text-align: center;
-      font-family: 'Lato', sans-serif;
-      font-size: 32px;
-      color: white;
-      text-shadow: 0px 2px gray;
-    }
-    .browseCats{
-      float: right;
-      margin-top: -250px;
-      margin-right: 150px;
-      height: 400px;
-      text-align: center;
-      font-family: 'Lato', sans-serif;
-      font-size: 32px;
-      color: white;
-      text-shadow: 0px 2px gray;
-    }
-    .dogIcon{
-      max-height: 30%;
-      max-width: 30%;
-    }
-    .catIcon{
-      max-height: 30%;
-      max-width: 30%;
-    }
-
-  </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default animated fadeInDown">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -275,11 +39,12 @@ h1 {
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Home</a></li>
-          <li class="active"><a href="#">Favorites</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">My Account</a></li>
-          <li><a href="#">Help</a></li>
+          <li class="active"><a href="landing.html">Home</a></li>
+          <li><a href="browse.html">Browse</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a class="btn-login" href="#">Login</a></li>
+          <li><a class="btn-logout" href="#" style="display: none">Logout</a></li>
+          <li><a href="help.html">Help</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
         </ul>
       </div>
@@ -288,31 +53,36 @@ h1 {
 
 <div class="container-fluid text-center">
   <div class="row">
-    <h1 class="titleText">We match people with pets</h1>
+    <h1 class="titleText animated fadeIn">We match people with pets</h1>
     <br />
     <br />
-    <div class="row">
+    <div class="row rowContain">
       <div class="col-sm-6">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%;" alt="Image">
-        <div class="col-sm-6 browseDogs">
-          <img src="images/dog.svg" class="dogIcon" /><br /><br />
+        <div class="imageContainer">
+        <img src="images/browseDogImage.jpg" class="img-responsive browseDogImage" style="width:100%;" alt="Image">
+        <div class="col-sm-6 browseDogs animated fadeInLeftBig">
+          <a href="browse.html" class="browseLinkText"><img src="images/dog.svg" class="dogIcon" /></a><br />
           BROWSE DOGS
         </div>
       </div>
-      <div class="row circle">
+      </div>
+      <div class="row circle animated fadeInUp">
+        <a href="mattSurvey.html" class="noUnderline">
         <div class="circleStyle col-lg-1 col-md-1 col-sm-1">
           HELP ME<br />CHOOSE
-        </div>
+        </div></a>
       </div>
       <div class="col-sm-6">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-        <div class="col-sm-6 browseCats">
-          <img src="images/cat.svg" class="catIcon" /><br /><br />
+        <div class="imageContainer">
+        <img src="images/browseCatImage.jpg" class="img-responsive browseCatImage" style="width:100%" alt="Image">
+        <div class="col-sm-6 browseCats animated fadeInRightBig">
+          <img src="images/cat.svg" class="catIcon" /><br />
           BROWSE CATS
         </div>
       </div>
+      </div>
     </div>
-    <div class="row green-box">
+    <div class="row greenboxLanding">
       <div class="col-sm-1"></div>
       <div class="col-sm-10">
       <h1 class="missionTitle">OUR MISSION</h1>
@@ -322,44 +92,58 @@ h1 {
     </div>
     <div class="col-sm-1"></div>
   </div>
-    <div class="row">
-      <div class="col-sm-3 imgTile">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-        <p>pet 1</p>
+<div class="row">
+      <div class="col-sm-3 hideDogImage">
+        <img src="images/daisy2.png" class="img-responsive" style="width:100%" alt="Image">
+          <div class="dogNamesBox">
+            <p class="dogNames">Daisy</p>
+          </div>
       </div>
-      <div class="col-sm-3 imgTile">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-        <p>pet 2</p>
+      <div class="col-sm-3 hideDogImage">
+        <img src="images/fennec-1.png" class="img-responsive" style="width:100%" alt="Image">
+          <div class="dogNamesBox">
+            <p class="dogNames">Fennec</p>
+          </div>
       </div>
-      <div class="col-sm-3 imgTile">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-        <p>pet 3</p>
+      <div class="col-sm-3 hideDogImage">
+        <img src="images/lexx-5.png" class="img-responsive" style="width:100%" alt="Image">
+          <div class="dogNamesBox">
+            <p class="dogNames">Lexx</p>
+          </div>
       </div>
-      <div class="col-sm-3 imgTile">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-        <p>pet 4</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3 imgTile">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-        <p>pet 5</p>
-      </div>
-      <div class="col-sm-3 imgTile">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-        <p>pet 6</p>
-      </div>
-      <div class="col-sm-3 imgTile">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-        <p>pet 7</p>
-      </div>
-      <div class="col-sm-3 imgTile">
-        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-        <p>pet 8</p>
+      <div class="col-sm-3 hideDogImage">
+        <img src="images/eustice.png" class="img-responsive" style="width:100%" alt="Image">
+          <div class="dogNamesBox">
+            <p class="dogNames">Eustice</p>
+          </div>
       </div>
     </div>
-  </div>
-</div>
+    <div class="row">
+      <div class="col-sm-3 hideDogImage">
+        <img src="images/percy3.png" class="img-responsive" style="width:100%" alt="Image">
+          <div class="dogNamesBox">
+            <p class="dogNames">Percy</p>
+          </div>
+      </div>
+      <div class="col-sm-3 hideDogImage">
+        <img src="images/shortie-2.png" class="img-responsive" style="width:100%" alt="Image">
+          <div class="dogNamesBox">
+            <p class="dogNames">Shortie</p>
+          </div>
+      </div>
+      <div class="col-sm-3 hideDogImage">
+        <img src="images/thorin3.png" class="img-responsive" style="width:100%" alt="Image">
+          <div class="dogNamesBox">
+            <p class="dogNames">Thorin</p>
+          </div>
+      </div>
+      <div class="col-sm-3 hideDogImage">
+        <img src="images/ziggy-1.png" class="img-responsive" style="width:100%" alt="Image">
+          <div class="dogNamesBox">
+            <p class="dogNames">Ziggy</p>
+          </div>
+      </div>
+    </div>
 
 <footer class="container-fluid text-center">
   <p><i class="glyphicon glyphicon-copyright-mark"></i>PetPals 2017</p>
